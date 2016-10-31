@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161029184932) do
+ActiveRecord::Schema.define(version: 20161031151315) do
+
+  create_table "blog_posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "blog_entry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "author_id"
+    t.index ["author_id"], name: "index_blog_posts_on_author_id"
+  end
 
   create_table "friendships", force: :cascade do |t|
     t.integer  "user_id"
