@@ -15,13 +15,16 @@
       
       
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Inbox", "#" %></li>
+        <li><%= link_to "Trail Mix", activities_path %></li>
 
         <li><%= link_to "Friends", users_path %></li>
 
         <li><%= link_to "Trail Magic", blog_posts_path %></li>
 
         <li><%= link_to "The Trading Post", "#" %></li>
+
+        <li><%= link_to "Inbox", "#" %></li>
+
 
         <% if current_user %>
         <li class="dropdown">
