@@ -51,7 +51,7 @@ class BlogPostsController < ApplicationController
   		@blog_post.destroy
 
   		respond_to do |format|
-  			format.html { redirect_to blog_posts_url, notice: "Your blog post was Destroyedx!!!"}
+  			format.html { redirect_to blog_posts_url, notice: "Your blog post was Destroyed!!!"}
   		end
   	end
 

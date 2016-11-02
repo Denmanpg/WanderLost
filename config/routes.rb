@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-  
-  get 'blog_posts/index'
-
-  get 'blog_posts/show'
-
-  get 'blog_posts/edit'
-
-  get 'blog_posts/new'
 
   devise_for :users
 
@@ -20,8 +12,14 @@ Rails.application.routes.draw do
   	end
   end
 
+  resources :comments, only: [:edit, :create, :udpate, :destroy]
 
   root 'welcome#index'
 
+  get 'your_posts' => 'blog_posts#your_posts'
+
+  get 'user_profile' => 'blog_posts#user_profile'
+
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
