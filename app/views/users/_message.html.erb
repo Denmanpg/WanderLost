@@ -6,7 +6,7 @@
 	prohibited this blog post from being saved: </h2>
 
 		<ul>
-			<% @blog_post.errors.full_message.each do |errorMessage| %>
+			<% @message.errors.full_message.each do |errorMessage| %>
 				<li><%= errorMessage %></li>
 				<% end %>
 		</ul>

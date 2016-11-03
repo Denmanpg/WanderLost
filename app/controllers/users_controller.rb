@@ -4,11 +4,26 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @users = User.all
+    case params[:people]
+    when "friends"
+      @users=current_user.get_friends
+    when "pending"
+      @users=current_user.get_pending
+    when "requested"
+      @users=current_user.get_requests
+    else
+      @users=User.where.not(id: current_user.id)
+    end
   end
 
   def messages
-    @messages=Message.all
+    case params[:filter]
+    when "sent"
+      @messages=current_user.get_sent
+    else
+      @messages=current_user.get_inbox
+    end
+    # @messages=Message.all
   end
 
   def show
