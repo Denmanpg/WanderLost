@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102171037) do
+ActiveRecord::Schema.define(version: 20161102171850) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "trackable_type"
@@ -107,6 +107,16 @@ ActiveRecord::Schema.define(version: 20161102171037) do
     t.string   "message_id"
     t.index ["notification_id"], name: "index_mailboxer_receipts_on_notification_id"
     t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "recipient_id"
+    t.string   "subject"
+    t.text     "body"
+    t.string   "status",       default: "unread"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "posts", force: :cascade do |t|

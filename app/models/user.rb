@@ -8,9 +8,17 @@ class User < ApplicationRecord
 
   has_many :friendships, dependent: :destroy
   has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id", dependent: :destroy
+  has_many :messages, dependent: :destroy
+  has_many :inverse_messages, class_name: "Message", foreign_key: "user_to", dependent: :destroy
   has_many :blog_posts
   has_many :posts
-  
+
+  def get_inbox
+    self.inverse_messages
+  end
+  def get_sent
+    self.messages
+  end
   def request_friendship(user_2)
     self.friendships.create(friend: user_2)
   end

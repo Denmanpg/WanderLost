@@ -1,0 +1,6 @@
+<% @messages.each do|message|%>
+<p><%=message.user.username%></p>
+<p><%=message.recipient.username%></p>
+<p><%=message.subject%></p>
+<p><%=message.body%></p>
+<%end%>
