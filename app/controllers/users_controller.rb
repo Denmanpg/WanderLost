@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show,:messages]
   before_action :authenticate_user!
 
   def index
@@ -16,10 +16,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def messages
+    case params[:filter]
+    when "sent"
+      @messages=current_user.get_sent
+    else
+      @messages=current_user.get_inbox
+    end
+  end
+
   def show
     @post = Post.new
     @posts = @user.posts.order('created_at DESC')
     @activities = PublicActivity::Activity.where(owner_id: @user.id)
+    @message=Message.new
   end
 
   def set_user

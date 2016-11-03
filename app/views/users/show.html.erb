@@ -48,7 +48,7 @@
 
 <div class="container">
 	<div class="row">
-    	<! -- Last 16 created active friendships --> 
+    	<!-- Last 16 created active friendships -->
    	 <div class="col-md-3">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -64,7 +64,7 @@
         </div>
     </div>
 
-    <! -- Posts -->
+   <!--  Posts -->
         <div class="col-md-6">
             <% if current_user ==@user %>
             <%= render "posts/form" %>
@@ -72,7 +72,7 @@
             <%= render @posts %>
         </div>
     
-        <! -- Public Activity (firendship acceptance) -->
+        <!-- Public Activity (firendship acceptance) -->
         <div class="col-md-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -90,5 +90,6 @@
 		<%=link_to "Edit Profile",edit_user_registration_path(current_user),class: "btn btn-warning"%>
 	<%else%>
 		<p><%=friend_buttons(@user)%></p>
+		<%=render 'message'%>
 	<%end%>
 </div>
