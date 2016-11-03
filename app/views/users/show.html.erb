@@ -49,5 +49,6 @@
 		<%=link_to "Edit Profile",edit_user_registration_path(current_user),class: "btn btn-warning"%>
 	<%else%>
 		<p><%=friend_buttons(@user)%></p>
+		<%=render 'message'%>
 	<%end%>
 </div>
