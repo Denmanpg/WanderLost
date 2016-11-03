@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :inverse_messages, class_name: "Message", foreign_key: "recipient_id", dependent: :destroy
   has_many :blog_posts
+  has_many :posts
 
   def get_inbox
     self.inverse_messages

@@ -15,6 +15,10 @@ Rails.application.routes.draw do
 
   resources :comments, only: [:edit, :create, :udpate, :destroy]
 
+  resources :posts, only: [:create, :update, :edit, :destroy]
+
+  resources :activities, only: [:index]
+
   root 'welcome#index'
 
   get 'your_posts' => 'blog_posts#your_posts'

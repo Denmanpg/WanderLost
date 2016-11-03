@@ -15,13 +15,9 @@
       
       
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Messages", user_messages_path %></li>
 
-        <li><%= link_to "Friends", users_path %></li>
+         <li><%= link_to "Invite", "#" %></li>
 
-        <li><%= link_to "Trail Magic", blog_posts_path %></li>
-
-        <li><%= link_to "The Trading Post", "#" %></li>
 
         <% if current_user %>
         <li class="dropdown">
@@ -42,3 +38,22 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div class="sidenav">
+
+  <%= link_to "Trail Magic", blog_posts_path %>
+  <%= link_to "Inbox", "#" %>
+  <%= link_to "Friends", users_path %>
+
+  <a href="#">Events</a>
+  <a href="#">Recommendations</a>
+  <div class="dropdown">
+    <%= link_to "The Trading Post", "#" %>
+    <div class="sub-classifieds">
+    <a href="#">Gear</a>
+    <a href="#">Books</a>
+    <a href="#">Maps</a>
+    </div>
+  </div>
+
+</div>
