@@ -1,11 +1,9 @@
-<div class="registrationcss">
-  <div class="seperate">
+<div class="container">
+  
   <h2>It's Free!</h2>
   <h3>Experience Online Trail Magic!</h3>
   <h3>Trade and Sell Gear Directly!</h3>
 
-
-  <div class="container">
   <h2>Sign up</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -28,6 +26,6 @@
   <% end %>
 
   <%= render "devise/shared/links" %>
-    </div>
-  </div>
+    
+  
 </div>

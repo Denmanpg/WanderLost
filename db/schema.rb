@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20161102171850) do
 
   create_table "blog_posts", force: :cascade do |t|
     t.string   "title"
+    t.string   "author"
     t.text     "blog_entry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
