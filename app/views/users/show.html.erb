@@ -29,25 +29,6 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-4">
-			<h3><%= @user.username %></h3>
-			<p>Name: <%= @user.name %></p>
-			<p>Age: <%= @user.age %></p>
-			<p>Trail Name: <%= @user.trail_name %></p>
-		</div>
-	</div>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-md-4">
-			<h3>About Me</h3>
-			<small><%= @user.bio %></small>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
     	<!-- Last 16 created active friendships -->
    	 <div class="col-md-3">
         <div class="panel panel-default">
@@ -56,9 +37,9 @@
             </div>
             <div class="panel-body">
                 <% @user.active_friends.last(16).each do |user| %>
-                <%= link_to user_path(user.username) do %>
-                <%= gravatar_tag user.email, size: 40 %>
-                <% end %>
+                    <%= link_to user_path(user.username) do %>
+                        <%= gravatar_tag user.email, size: 40 %>
+                    <% end %>
                 <% end %>
             </div>
         </div>
