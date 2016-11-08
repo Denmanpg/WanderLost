@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(user)
-    users_path(user)
+    user_path(current_user.username)
+  end
+  
+  def after_invite_path_for(resource)
+    new_user_invitation_path(resource)
   end
   
   protected 
