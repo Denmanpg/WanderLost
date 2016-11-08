@@ -2,16 +2,12 @@
 
 one:
   name: MyString
-  price: 9.99
-  quantity: 1
   description: MyText
-  brand: MyString
   category: one
+  user: one
 
 two:
   name: MyString
-  price: 9.99
-  quantity: 1
   description: MyText
-  brand: MyString
   category: two
+  user: two

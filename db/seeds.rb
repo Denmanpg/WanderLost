@@ -10,3 +10,6 @@
 	User.create(username: "awesomeBackpackers#{}", email: "backpacker#{x}@gmail.com", password:"password", password_confirmation: "password")
 end
 p "Test users created"
+
+categories=Category.create([{name:'Backpacks'},{name:'Tents'},{name:'Maps'},{name:'Books'},{name:'Cookware'},{name:'Misc'}])
+p"Categories seeded"
