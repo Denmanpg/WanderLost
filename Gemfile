@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'devise_invitable'
 gem 'public_activity'
 gem 'table_print'
 gem 'gravatarify'

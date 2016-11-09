@@ -6,7 +6,11 @@ Rails.application.routes.draw do
 
   resources :blog_posts
 
-  resources :users, only: [:show, :index,:messages]
+  resources :users, only: [:show, :index,:messages] do
+    member do
+      put :messages
+    end
+  end
 
   resources :friendships, only: [:create, :destroy, :accept] do
   	member do 
