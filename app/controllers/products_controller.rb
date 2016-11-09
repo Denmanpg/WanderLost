@@ -3,9 +3,32 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    @categories=Category.all
     case params[:filter]
     when "personal"
       @products=Product.where(user_id: current_user.id)
+    when "categorical"
+      @products=Product.all
+      @category=Category.find(params[:cat_id])
+      @products_of_cat=[]
+      @products.each do|product|
+        if product.category.id==params[:cat_id].to_i
+          @products_of_cat.push(product)
+        end
+      end
+      @products=@products_of_cat
+    when "friends"
+      @friends=current_user.active_friends
+      @products=Product.where.not(user_id: current_user.id)
+      @products_by_friend=[]
+      @products.each do |product|
+        @friends.each do|friend|
+          if friend==product.user||friend==product.user
+            @products_by_friend.push(product)
+          end
+        end
+      end
+      @products=@products_by_friend
     else
       @products = Product.all
     end
