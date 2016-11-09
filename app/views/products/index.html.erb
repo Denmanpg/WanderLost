@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<div class="jumbotron text-center">
+  <h2>My Homies!</h2>
+    <div class="btn-group" role="group" aria-label="People Groups">
+      <%= link_to "All Listings", products_path, class: "btn btn-default #{'active' unless params[:filter]}" %>
+      <%= link_to "My Listings", products_path(filter: "personal"), class: "btn btn-default #{'active' if params[:filter] == 'personal'}" %>
+    </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <%= render @products %>
+  </div>
+</div>
+<%= link_to 'New Product', new_product_path %>
